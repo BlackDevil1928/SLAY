@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Disease Food Suggestions</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-group {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin-top: 20px;  /* Added margin-top for spacing */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #suggestions {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .no-data {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("disease-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                document.getElementById("suggestions").innerHTML = `
+                    <h2>Food Suggestion</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Serving Size[g]</th>
+                                <th>Calories[kcal]</th>
+                                <th>Carbohydrate[g]</th>
+                                <th>Protein[g]</th>
+                                <th>Fat[g]</th>
+                                <th>AI Suggestion</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="8" class="no-data">No data available in table</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Food Suggestions for Diseases</h1>
+        <form id="disease-form">
+            <div class="form-group">
+                <label for="disease">Enter Disease:</label>
+                <input type="text" id="disease" name="disease" required>
+            </div>
+            <button type="submit">Get Suggestions</button>
+        </form>
+        <div id="suggestions"></div>
+    </div>
+</body>
+</html>
