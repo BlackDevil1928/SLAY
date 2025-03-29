@@ -1,5 +1,4 @@
-# SLAY
-Smart Diet & Nutrition Planner
+# SLAY: Smart Diet & Nutrition Planner
 Overview
 
 NutriPlan is an AI-driven web application designed for nutrition and diet planning. It empowers users to create personalized dietary plans and search for food items using the Nutritionix database. The system intelligently recommends foods based on extracted nutritional features, individual user preferences, and specific dietary goals. Furthermore, it provides a comprehensive nutritional breakdown of suggested foods, utilizing the latest Estimated Energy Requirement (EER) equation [1][2].
